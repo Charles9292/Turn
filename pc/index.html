@@ -1,0 +1,97 @@
+<!doctype html>
+<!-- [if lt IE 7 ]> <html lang="en" class="ie6"> <![endif] -->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Color打印</title>
+  <script>
+  String.prototype.getQuery = function(name) {
+    if (!name) return undefined
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)")
+    var r = this.substr(this.indexOf("\?") + 1).match(reg)
+    if (r != null) return unescape(r[2])
+    return null
+  }
+
+  var win = window,
+    bookId = win.location.href.getQuery('bookId') || 1331,
+    mis = win.location.href.getQuery('_mis'),
+    userAgent = win.navigator.userAgent,
+    switchOverUrl = null
+
+  if (mis) {
+    switchOverUrl = '//www.mycolordiary.com/html/turn/mobile/index.html?bookId=' + bookId + '&_mis=1'
+  } else {
+    switchOverUrl = '//www.mycolordiary.com/html/turn/mobile/index.html?bookId=' + bookId
+  }
+
+  if (userAgent.indexOf('iPhone') >= 0 ||
+    userAgent.indexOf('Android') >= 0 ||
+    userAgent.indexOf('iPad') >= 0 ||
+    userAgent.indexOf('Windows Phone') >= 0 ||
+    userAgent.indexOf('MeeGo') >= 0 ||
+    userAgent.indexOf('BB10') >= 0)
+    win.location.href = switchOverUrl
+  </script>
+  <!-- <link rel="stylesheet" href="css/jquery.ui.css"> -->
+  <link rel="stylesheet" href="//cdn.mycolordiary.com/html/turn/dist/pc/css/jquery.ui.css">
+  <link rel="stylesheet" href="css/docs.css">
+  <!-- <link rel="stylesheet" href="//cdn.mycolordiary.com/html/turn/dist/pc/css/docs.css?v=3"> -->
+</head>
+
+<body>
+  <div id="canvas">
+    <div id="txtFront"></div>
+    <div id="txtLater"></div>
+    <div class="front"></div>
+
+    <div id="book-zoom">
+      <!-- 分享 -->
+      <a id="share"></a>
+      <div class="share">
+        <a class='msb_network_button weixin'></a>
+        <a class='msb_network_button sina'></a>
+        <a class='msb_network_button qZone'></a>
+      </div>
+      <!-- 下载 -->
+      <a id="download" href="//www.mycolordiary.com" target="_blank"></a>
+      <a id="rightPage"></a>
+      <a id="leftPage"></a>
+      <!-- 书 -->
+      <div class="sample-docs"></div>
+    </div>
+    <div class="later"></div>
+    <!-- 进度条 -->
+    <div id="slider-bar" class="turnjs-slider">
+      <div id="slider"></div>
+    </div>
+    <div class="editor">
+      <div class="editor-inner">
+        <button id="modify">修改</button>
+        <button id="save">保存</button>
+      </div>
+    </div>
+  </div>
+  <!-- <script type="text/javascript" src="extras/jquery.min.1.7.js"></script> -->
+  <script src="//cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="extras/jquery-ui-1.8.20.custom.min.js"></script> -->
+  <script src="//cdn.bootcss.com/jqueryui/1.8.24/jquery-ui.min.js"></script>
+  <!-- <script type="text/javascript" src="lib/fabric.min.js"></script> -->
+  <script src="//cdn.bootcss.com/fabric.js/1.7.7/fabric.min.js"></script>
+  <!-- <script type="text/javascript" src="lib/turn.min.js"></script> -->
+  <script src="//cdn.mycolordiary.com/html/turn/dist/pc/lib/turn.js"></script>
+  <!-- <script type="text/javascript" src="lib/share.js"></script> -->
+  <script src="//cdn.mycolordiary.com/html/turn/dist/pc/lib/share.js"></script>
+  <!-- <script type="text/javascript" src="lib/es6-promise.min.js"></script> -->
+  <script src="//cdn.bootcss.com/es6-promise/4.1.0/es6-promise.min.js"></script>
+  <script type="text/javascript" src="js/docs.js"></script>
+  <!-- <script src="//cdn.mycolordiary.com/html/turn/dist/pc/js/docs.js?v=13"></script> -->
+</body>
+
+</html>

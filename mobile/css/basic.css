@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+}
+
+.bg {
+  padding: .8rem 0 .8rem 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.music {
+  height: .66rem;
+  overflow: hidden;
+  margin-bottom: .1rem;
+}
+
+.musicIcon {
+  width: .66rem;
+  height: .66rem;
+  float: right;
+  margin-right: .2rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .5) url(../image/musicIcon.png) no-repeat center;
+  background-size: 55%;
+}
+
+.musicIconShade {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 50%;
+  display: none;
+}
+
+.page {
+  height: .66rem;
+  overflow: hidden;
+}
+
+.pageNumber {
+  width: .66rem;
+  height: .66rem;
+  float: right;
+  margin-right: .2rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .8);
+  color: #fff;
+  font-size: .24rem;
+  line-height: .66rem;
+  text-align: center;
+}
+
+.footer-btn {
+  border-radius: 999px;
+  background: rgb(255, 65, 96);
+  width: 4.6rem;
+  height: .8rem;
+  font-size: .3rem;
+  text-align: center;
+  line-height: .8rem;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.flipbook-viewport {
+  width: 5.48rem;
+  height: 8.84rem;
+  margin: 0 auto .1rem;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 8px 10px 10px 1px rgba(0, 0, 0, .5);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../image/loader.gif');
+  background-color: #fff;
+}
+
+#flipLeft {
+  position: absolute;
+  z-index: 100;
+  width: 50%;
+}
+
+#flipRight {
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  width: 50%;
+}
+
+.loader {
+  background-image: url(../image/loader.gif);
+  width: 22px;
+  height: 22px;
+  margin: 0 auto;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <title>Color打印</title>
+  <script>
+  String.prototype.getQuery = function(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)")
+    var r = this.substr(this.indexOf("\?") + 1).match(reg)
+    if (r != null) return unescape(r[2])
+    return null
+  }
+
+  var bookId = window.location.href.getQuery('bookId')
+
+  var mis = window.location.href.getQuery('_mis')
+
+  var userAgent = window.navigator.userAgent;
+
+  var switchOverUrl = null
+
+  if (mis) {
+    switchOverUrl = 'https://www.mycolordiary.com/html/turn/pc/index.html?bookId=' + bookId + '&_mis=1'
+  } else {
+    switchOverUrl = 'https://www.mycolordiary.com/html/turn/pc/index.html?bookId=' + bookId
+  }
+
+  if (userAgent.indexOf('iPhone') == -1 &&
+    userAgent.indexOf('Android') == -1 &&
+    userAgent.indexOf('iPad') == -1 &&
+    userAgent.indexOf('Windows Phone') == -1 &&
+    userAgent.indexOf('MeeGo') == -1 &&
+    userAgent.indexOf('BB10') == -1)
+    window.location.href = switchOverUrl
+  </script>
+  <link rel="stylesheet" type="text/css" href="css/basic.css" />
+</head>
+
+<body>
+  <div class="bg">
+    <div class="music">
+      <div class="musicIcon">
+        <div class="musicIconShade"></div>
+      </div>
+    </div>
+    <div class="flipbook-viewport">
+      <!-- 手势 -->
+      <span id="flipLeft"></span>
+      <span id="flipRight"></span>
+      <div class="container">
+        <div class="flipbook">
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="pageNumber"></div>
+    </div>
+    <!-- <footer> -->
+    <div class="footer-btn">我也要免费制作</div>
+    <!-- </footer> -->
+  </div>
+  <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+  <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="js/fabric.min.js"></script> -->
+  <script src="https://cdn.bootcss.com/fabric.js/1.7.7/fabric.min.js"></script>
+  <script type="text/javascript" src="js/turn.min.js"></script>
+  <!-- <script src="https://cdn.bootcss.com/turn.js/3/turn.min.js"></script> -->
+  <script type="text/javascript" src="js/touch-0.2.6.js"></script>
+  <!-- <script src="https://cdn.bootcss.com/touchjs/0.2.13/touch.min.js"></script> -->
+  <!-- <script type="text/javascript" src="js/es6-promise.min.js"></script> -->
+  <script src="https://cdn.bootcss.com/es6-promise/4.1.0/es6-promise.min.js"></script>
+  <script type="text/javascript" src="js/docs.js"></script>
+  <script>
+  var stepCounter = {}
+  css()
+  initContainer()
+  if (mis) { // 绘制
+    preview(true)
+  } else {
+    preview()
+  }
+  Touch() // 翻书区域
+  initEve() // 初始化事件
+  </script>
+</body>
+
+</html>
