@@ -1,0 +1,322 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url('../imgs/h5_03.jpg');
+}
+
+#canvas {
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+#book-zoom {
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -ms-transition: -ms-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  width: 700px;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.animated {
+  -webkit-transition: margin-left 0.2s ease-in-out;
+  -moz-transition: margin-left 0.2s ease-in-out;
+  -o-transition: margin-left 0.2s ease-in-out;
+  -ms-transition: margin-left 0.2s ease-in-out;
+  transition: margin-left 0.2s ease-in-out;
+}
+
+.sample-docs .even .gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/right-border.png);
+  background-position: right top;
+  background-repeat: repeat-y;
+}
+
+.sample-docs .odd .gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/left-border.png);
+  background-position: left top;
+  background-repeat: repeat-y;
+}
+
+.sample-docs .page-wrapper {
+  -webkit-perspective: 2000px;
+  -moz-perspective: 2000px;
+  -ms-perspective: 2000px;
+  perspective: 2000px;
+}
+
+.loader {
+  background-image: url(../imgs/loader.gif);
+  width: 22px;
+  height: 22px;
+  margin: 0 auto;
+}
+
+.loader1 {
+  background: #fff url(../imgs/loader.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sample-docs .shadow {
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  -moz-transition: -moz-box-shadow 0.5s;
+  -o-transition: -webkit-box-shadow 0.5s;
+  -ms-transition: -ms-box-shadow 0.5s;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+  -o-box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+  -ms-box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+}
+
+#share {
+  position: absolute;
+  right: -9%;
+  top: 28.5%;
+  display: block;
+  width: 34px;
+  height: 67px;
+  background: #000 url(../imgs/share0.png) no-repeat center;
+  background-size: 55%;
+  opacity: .6;
+  border-radius: 5px;
+  z-index: 1;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#share:hover {
+  background: #000 url(../imgs/share.png) no-repeat center;
+  background-size: 55%;
+}
+
+#weixin {
+    width: 262px;
+    height: 317px;
+    border: solid 1px #d8d8d8;
+    z-index: 1000000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: white;
+    display: none;
+}
+
+#weixin .bd_weixin_popup_head {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 16px;
+    height: 16px;
+    position: relative;
+    color: #000;
+    width: 90%;
+    margin: 10px auto;
+}
+
+#weixin .bd_weixin_popup_head .bd_weixin_popup_close {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #999;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#weixin .erweima {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#weixin .erweima .erweimas {
+    width: 100%;
+    display: block;
+}
+
+#weixin .msgs {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: left;
+    line-height: 22px;
+    color: #666;
+}
+
+.share {
+  position: absolute;
+  right: -17%;
+  top: 29.5%;
+  display: block;
+  z-index: 10;
+}
+
+.msb_network_button {
+  display: block;
+  width: 31px;
+  height: 31px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.msb_network_button.sina {
+  background: url(../imgs/social.png) no-repeat -130px -87px;
+}
+
+.msb_network_button.tQQ {
+  background: url(../imgs/social.png) no-repeat -185px -20px;
+}
+
+.msb_network_button.qZone {
+  background: url(../imgs/social.png) no-repeat -73px -20px;
+}
+
+.msb_network_button.douban {
+  background: url(../imgs/social.png) no-repeat -130px -151px;
+}
+
+.msb_network_button.weixin {
+  background: url(../imgs/social.png) no-repeat -73px -87px;
+}
+
+#download {
+  position: absolute;
+  right: -9%;
+  top: 40%;
+  display: block;
+  width: 34px;
+  height: 67px;
+  background: #000 url(../imgs/load0.png) no-repeat center;
+  background-size: 70%;
+  opacity: .6;
+  border-radius: 5px;
+  z-index: 1;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#download:hover {
+  background: #000 url(../imgs/load.png) no-repeat center;
+  background-size: 70%;
+}
+
+a#rightPage,
+a#leftPage {
+  position: absolute;
+  width: 34px;
+  height: 89px;
+  cursor: pointer;
+  opacity: .6;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+a#leftPage {
+  right: -9%;
+  bottom: 26.5%;
+  background: #000 url(../imgs/left0.png) no-repeat center;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+a#leftPage:hover {
+  background: #000 url(../imgs/left.png) no-repeat center;
+}
+
+a#rightPage {
+  right: -9%;
+  bottom: 11.1%;
+  background: #000 url(../imgs/right0.png) no-repeat center;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+a#rightPage:hover {
+  background: #000 url(../imgs/right.png) no-repeat center;
+}
+
+.describe {
+  float: left;
+}
+
+.front {
+  width: 350px;
+  height: 572.2px;
+  margin-right: 10px;
+  display: none;
+  background: #eee;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: auto;
+}
+
+.later {
+  width: 350px;
+  height: 572.2px;
+  margin-left: 10px;
+  display: none;
+  background: #eee;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: auto;
+}
+
+#txtFront {
+  width: 900px;
+  height: 30px;
+  float: left;
+  display: none
+}
+
+#txtLater {
+  width: 380px;
+  height: 30px;
+  float: right;
+  display: none
+}
+
+.aBlock {
+  display: block;
+  width: 100%;
+}
+
+.editor {
+  display: none;
+  width: 227px;
+  height: 103px;
+  text-align: center;
+}
+
+.editor-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.lay {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
