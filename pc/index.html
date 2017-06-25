@@ -26,9 +26,9 @@
     switchOverUrl = null
 
   if (mis) {
-    switchOverUrl = '//www.mycolordiary.com/html/turn/mobile/index.html?bookId=' + bookId + '&_mis=1'
+    switchOverUrl = '//'
   } else {
-    switchOverUrl = '//www.mycolordiary.com/html/turn/mobile/index.html?bookId=' + bookId
+    switchOverUrl = '//'
   }
 
   if (userAgent.indexOf('iPhone') >= 0 ||
@@ -39,10 +39,8 @@
     userAgent.indexOf('BB10') >= 0)
     win.location.href = switchOverUrl
   </script>
-  <!-- <link rel="stylesheet" href="css/jquery.ui.css"> -->
-  <link rel="stylesheet" href="//cdn.mycolordiary.com/html/turn/dist/pc/css/jquery.ui.css">
+  <link rel="stylesheet" href="css/jquery.ui.css">
   <link rel="stylesheet" href="css/docs.css">
-  <!-- <link rel="stylesheet" href="//cdn.mycolordiary.com/html/turn/dist/pc/css/docs.css?v=3"> -->
 </head>
 
 <body>
@@ -84,14 +82,11 @@
   <script src="//cdn.bootcss.com/jqueryui/1.8.24/jquery-ui.min.js"></script>
   <!-- <script type="text/javascript" src="lib/fabric.min.js"></script> -->
   <script src="//cdn.bootcss.com/fabric.js/1.7.7/fabric.min.js"></script>
-  <!-- <script type="text/javascript" src="lib/turn.min.js"></script> -->
-  <script src="//cdn.mycolordiary.com/html/turn/dist/pc/lib/turn.js"></script>
-  <!-- <script type="text/javascript" src="lib/share.js"></script> -->
-  <script src="//cdn.mycolordiary.com/html/turn/dist/pc/lib/share.js"></script>
+  <script type="text/javascript" src="lib/turn.min.js"></script>
+  <script type="text/javascript" src="lib/share.js"></script>
   <!-- <script type="text/javascript" src="lib/es6-promise.min.js"></script> -->
   <script src="//cdn.bootcss.com/es6-promise/4.1.0/es6-promise.min.js"></script>
   <script type="text/javascript" src="js/docs.js"></script>
-  <!-- <script src="//cdn.mycolordiary.com/html/turn/dist/pc/js/docs.js?v=13"></script> -->
 </body>
 
 </html>

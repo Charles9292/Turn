@@ -23,25 +23,15 @@ function initContainer() {
 
 function preview(mis) {
   var params = null
-    // mis = true
   if (mis) {
     params = {
-      cmd: 'Book.preview',
-      ownerUserId: 0,
       _mis: 1,
       bookId: bookId,
-      // bookId: 16882
-      // bookId: 4846 // 偶数
-      // bookId: 624 // 奇数
     }
   } else {
     params = {
-      cmd: 'Book.preview',
       ownerUserId: 0,
       bookId: bookId,
-      // bookId: 10147
-      // bookId: 4846 // 偶数
-      // bookId: 624 // 奇数
     }
   }
   $.get('/s/api', params, function(data) {
@@ -56,8 +46,6 @@ function preview(mis) {
 function previewPage(pageContent) {
   return promise = new Promise(function(res, rej) {
     $.post('/s/api', {
-      cmd: 'Book.previewPage',
-      ownerUserId: '734937',
       pageContent: JSON.stringify(pageContent)
     }, function(data) {
       if (data.err == 'ok') {
@@ -501,15 +489,6 @@ function css() {
   document.documentElement.style.fontSize = deviceWidth / 7.2 + 'px';
 }
 
-function cdnUrl() {
-  var domain = ''
-  if (window.location.href.search('www.mycolordiary.com') >= 0) {
-    domain = 'https://cdn.mycolordiary.com'
-  } else {
-    domain = 'https://test.mycolordiary.com'
-  }
-  return domain
-}
 
 function initEve() { // 下载
   $('.footer-btn').on('click', function() {

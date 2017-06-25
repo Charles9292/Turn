@@ -4,7 +4,7 @@ var proxy = require('http-proxy-middleware')
 var app = express()
 
 var proxyTable = {
-  target: 'https://www.mycolordiary.com',
+  target: 'https://www..com',
   changeOrigin: true,
   pathRewrite: {
     '^/s/api': '/s/api'

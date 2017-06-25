@@ -12,7 +12,7 @@
       },
       cdnUrl: function() {
         var url = ''
-        location.href.indexOf('www') != -1 ? url = '//cdn.mycolordiary.com' : url = '//test.mycolordiary.com'
+        location.href.indexOf('www') != -1 ? url = '//cdn..com' : url = '//test..com'
         return url
       },
       initContainerUser: function() {
@@ -40,15 +40,13 @@
         // mis = true
         if (!mis) {
           params = {
-            cmd: 'Book.preview',
-            ownerUserId: 0,
+            
             _mis: 1,
             bookId: bookId
           }
         } else {
           params = {
-            cmd: 'Book.preview',
-            ownerUserId: 0,
+            
             bookId: bookId
           }
         }
@@ -63,9 +61,7 @@
       previewPage: function(pageContent) {
         return promise = new Promise(function(res, rej) {
           $.post('/s/api', {
-            cmd: 'Book.previewPage',
             pageContent: JSON.stringify(pageContent),
-            ownerUserId: 0,
             bookId: bookId
           }, function(data) {
             if (data.err == 'ok') {
@@ -361,8 +357,7 @@
                 var element = e.target,
                     width = element.width * element.scaleX,
                     height = element.height * element.scaleY
-                $.get('/print/api', {
-                  cmd: 'cache.modify',
+                $.get('', {
                   bookId: bookId,
                   pageDiary: singleData.res.pageDiary,
                   dataId: element.id || 0,
