@@ -35,7 +35,7 @@
         $('#share, .share, #download').css('display', 'none')
         $('#rightPage, #leftPage').css('right', '-59%')
       },
-      preview: function(mis) { // 参数mis可以在后台查看到用户已删除的手帐
+      preview: function(mis) {
         var params = {}
         // mis = true
         if (!mis) {
@@ -314,7 +314,7 @@
         var element = this.backDiv(params.i, params.pages)
         params.book.turn('addPage', element, params.i)
         this.previewPage(params.data[params.page - 1]).then(function(singleData) {
-          var isDisposeLacePen = false, // 是否特殊处理花边笔
+          var isDisposeLacePen = false,
             bookWidth = 700 / 2,
             bookHeight = bookWidth * 1.6348,
             contentJson = singleData.res.contentJson,
@@ -419,19 +419,16 @@
           }
           
           setTimeout(function() {
-            // console.log(params.i + ': ', Variable.stepCounter[params.i], promiseArr.length)
             if (Variable.stepCounter[params.i] == promiseArr.length) {
               Promise.all(promiseArr).then(function() {
                 layerArr.sort(function(a, b) {
                   return a.index - b.index
                 })
 
-                // console.log('beforeMoveTo' + params.i + ':' + (new Date() - start) + '')
                 for (var a = 0, len = layerArr.length; a < len; a++) {
                   c.moveTo(layerArr[a].img, a)
                 }
                 c.renderAll()
-                // console.log('afterMoveTo ' + params.i + ':' + (new Date() - start) + '')
                 
                 $('#c' + params.i).css({ top: '0' })
               })
@@ -441,7 +438,7 @@
           }, 300)
         })
       },
-      drawLaces: function(params) { // 绘制花边笔或荧光笔
+      drawLaces: function(params) { 
         var standard = params.book.width()
         if (params.item.signs) {
           this.lacePen({
@@ -462,7 +459,7 @@
           })
         }
       },
-      lacePen: function(params) { // 花边笔
+      lacePen: function(params) {
         var originX = '',
             originY = ''
         if (params.isDisposeLacePen) {
@@ -519,7 +516,7 @@
           })
         })
       },
-      lightPen: function(params) { // 荧光笔
+      lightPen: function(params) {
         var txt = '',
             lineWidth = 0
         if (params.item.laceWidth <= 1) {
@@ -684,18 +681,7 @@
       stepCounter: {},
       cdn: Functional.cdnUrl(),
       signs: [
-        '02b6838508a7b2d3016c5417a99f3009',
-        '0fb96a0a0c9bf24a3f761c0223ebe8e0',
-        'c1946943c38e9bfb067423d60c6841c6',
-        'c568d280827044a96891536eca77940d',
-        'd452c848e1f0739b39824f86aace4080',
-        '1e48131f01f3ec0710d519b30547cb28',
-        'de8855f3dea91a181f185cc10ee70ca2',
-        '8672df01b36b3d998bf0edb18674b2ad',
-        '4ce1fcfa0f580d16a73ed0766e5f8df1',
-        'df863b88fe19a305e2d539f2b02cd198',
-        '121ff6b85f76f704c924387b8c5bcd88',
-        '3e111f6993d0c0d736cfbb6661c1e257'
+        'sijfklsdfkl12312'
       ]
     },
     Warehouse = {}
